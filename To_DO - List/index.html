@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista De Tarefas</title>
+
+    <style>
+        body {
+            background-color: pink;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 45px;
+            color: black;
+            text-align: center;
+        }
+
+        input {
+            height: 40px;
+            width: 70%;
+            border: 2px solid blue;
+            background: #fff;
+            color: black;
+            outline: none;
+        }
+
+        button {
+            background-color: blue;
+            border: none;
+            height: 44px;
+            color: #fff;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: aqua;
+            height: 45px;
+        }
+
+        button:active {
+            background-color: blueviolet;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background-color: blue;
+            color: #eee;
+            font-weight: bold;
+
+            padding: 10px;
+            margin: 10px auto;
+            border-radius: 5px;
+        }
+
+        li button {
+            height: 32px;
+            margin-left: 5px;
+            padding: 0 10px;
+            font-size: 14px;
+        }
+
+        span {
+            cursor: pointer;
+        }
+
+        .concluida {
+            background-color: #41be10;
+        }
+
+        .concluida span {
+            text-decoration: line-through;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Lista De Tarefas</h1>
+
+    <input placeholder="Digite a sua tarefa">
+    <button onclick="adicionarTarefa()">Adicionar</button>
+
+    <ul></ul>
+
+    <script>
+        function adicionarTarefa() {
+            let campo = document.querySelector("input");
+            let texto = campo.value;
+
+            if (texto.trim() === "") {
+                alert("Digite uma tarefa!");
+                return;
+            }
+
+            let lista = document.querySelector("ul");
+
+            let li = document.createElement("li");
+            let span = document.createElement("span");
+            span.textContent = texto;
+
+            let botaoConcluir = document.createElement("button");
+            botaoConcluir.textContent = "Concluir";
+            botaoConcluir.onclick = function () {
+                concluir(this);
+            };
+
+            let botaoRemover = document.createElement("button");
+            botaoRemover.textContent = "Remover";
+            botaoRemover.onclick = function () {
+                remover(this);
+            };
+
+            let divBotoes = document.createElement("div");
+            divBotoes.appendChild(botaoConcluir);
+            divBotoes.appendChild(botaoRemover);
+
+            li.appendChild(span);
+            li.appendChild(divBotoes);
+
+            lista.appendChild(li);
+
+            campo.value = "";
+            campo.focus();
+        }
+
+        function concluir(botao) {
+            let li = botao.parentElement.parentElement;
+
+            if (li.className === "concluida") {
+                li.className = "";
+                botao.textContent = "Concluir";
+            } else {
+                li.className = "concluida";
+                botao.textContent = "Desfazer";
+            }
+        }
+
+        function remover(botao) {
+            let li = botao.parentElement.parentElement;
+            li.remove();
+        }
+    </script>
+</body>
+</html>
