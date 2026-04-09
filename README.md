@@ -25,5 +25,6 @@ Este projeto consiste no desenvolvimento de uma to-do list utilizando HTML, CSS 
 O projeto, funciona como um pequeno gerenciamento de tarefas, consistindo na organização, sendo possivel inserir a tarefa, marcar como concluida, e apagar para poder adicionar outra.
 
 🛠️ Tecnologias Utilizadas
+
 HTML5, CSS, JavaScript
 
