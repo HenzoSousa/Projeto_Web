@@ -32,7 +32,7 @@ HTML5, CSS, JavaScript
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
- 🛒 E-commerce - Cafeteria Ivy's coffee shop - Projeto Web]
+ 🛒 E-commerce - Cafeteria Ivy's coffee shop - Projeto Web
 
 Este projeto consiste no desenvolvimento de uma pagina E-commerce simulando uma cafeteria chamada "Ivy's coffee shop", criado com o objetivo de fazer a compra de um produto, e ir direto para o carrinho de compras, assim fazendo a soma, o total de itens comprados. 
 
