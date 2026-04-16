@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ivy's coffee shop</title>
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    
+    <header class="top-bar">
+        <div class="logo">
+            <span class="icon">☕</span> Ivy's coffee shop
+        </div>
+        <div class="user-info">
+            <span>Bem-vindo!</span>
+            <a href="#" class="btn-sair">Sair</a>
+        </div>
+    </header>
+
+   
+    <main class="container">
+        
+       
+        <section class="menu-section">
+            
+           
+            <div class="filtro-container">
+                <select id="filtro">
+                    <option value="todos">Todas as Categorias</option>
+                    <option value="bebidas">Bebidas</option>
+                    <option value="comidas">Comidas</option>
+                </select>
+            </div>
+
+          
+            <div class="produtos-grid" id="lista-produtos">
+               
+            </div>
+        </section>
+
+        
+        <aside class="cart-section">
+            <div class="cart-box">
+                <h2>Seu Pedido</h2>
+                
+                <div class="cart-items" id="lista-carrinho">
+                   
+                </div>
+
+                <div class="cart-footer">
+                    <div class="total-row">
+                        <span>Total</span>
+                        <span id="total-valor">R$ 0.00</span>
+                    </div>
+                    <button class="btn-finalizar" id="btn-limpar">Finalizar Pedidos</button>
+                </div>
+            </div>
+        </aside>
+
+    </main>
+
+    
+    <script src="script.js"></script>
+</body>
+</html>
