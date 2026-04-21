@@ -178,6 +178,25 @@ body {
 }
 
 
+.btn-limpar {
+    width: 100%;
+    background-color: transparent;
+    color: #c0502a;
+    border: 1px solid #c0502a;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s, color 0.2s;
+}
+ 
+.btn-limpar:hover {
+    background-color: #c0502a;
+    color: white;
+}
+
 .cart-section {
     width: 370px;
     position: sticky;
