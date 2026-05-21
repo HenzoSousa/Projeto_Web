@@ -1,0 +1,176 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+h1 {
+    color: cyan;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.cabecalho {
+    background-color: #1a237e;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.titulo-secao {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #1a237e;
+    border-left: 4px solid #1a237e;
+    padding-left: 8px;
+    margin-bottom: 12px;
+}
+
+label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.botao {
+    background-color: #1a237e;
+    color: white;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.botao:hover {
+    background-color: #3949ab;
+}
+
+.botao-voltar {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 20px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #333;
+}
+
+.caixa-aluno {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.linha-campos {
+    display: flex;
+    gap: 12px;
+}
+
+.linha-campos .campo-grupo {
+    flex: 1;
+}
+
+hr.divisor {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 8px 10px;
+    text-align: center;
+}
+
+table th {
+    background-color: #1a237e;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Badges de situação */
+.badge {
+    padding: 3px 10px;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.badge-aprovado    { background-color: #2e7d32; }
+.badge-recuperacao { background-color: #f57f17; }
+.badge-reprovado   { background-color: #c62828; }
+
+/* Cartões de estatística */
+.grade-estatisticas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.cartao-stat {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 14px;
+    text-align: center;
+    min-width: 140px;
+}
+
+.cartao-stat .numero {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #1a237e;
+    display: block;
+}
+
+.cartao-stat .descricao {
+    font-size: 0.8rem;
+    color: #555;
+}
+
+/* Mensagem de desempenho */
+.mensagem-desempenho {
+    padding: 14px;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.mensagem-otimo   { background-color: #e8f5e9; color: #2e7d32; }
+.mensagem-atencao { background-color: #fff8e1; color: #f57f17; }
+.mensagem-alerta  { background-color: #ffebee; color: #c62828; }
