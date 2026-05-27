@@ -26,10 +26,10 @@
 
             <div class="campo-grupo">
                 <label>Quantidade de Alunos:</label>
-                <input type="number" name="qtd_alunos" required min="2" max="30" placeholder="De 2 a 30 alunos">
+                <input type="number" name="qtd_alunos" required min="2" max="40" placeholder="De 2 a 40 alunos">
             </div>
 
-            <button type="submit" class="botao">Avançar →</button>
+            <button type="submit" class="botao">Avançar</button>
 
         </form>
     </div>

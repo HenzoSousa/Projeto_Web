@@ -4,7 +4,7 @@ $nome_turma = $_POST["nome_turma"];
 $qtd_alunos = intval($_POST["qtd_alunos"]);
 
 // Garante que a quantidade está entre 2 e 30, se não volta ao início
-if ($qtd_alunos < 2 || $qtd_alunos > 30) {
+if ($qtd_alunos < 2 || $qtd_alunos > 40) {
     header("Location: index.php");
     exit;
 }
