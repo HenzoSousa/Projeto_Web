@@ -16,7 +16,7 @@
     <div class="corpo">
         <p class="titulo-secao">Informações da Turma</p>
 
-        <!-- O formulário envia os dados para alunos.php usando o método POST -->
+       
         <form action="alunos.php" method="post">
 
             <div class="campo-grupo">

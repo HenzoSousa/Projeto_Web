@@ -1,5 +1,5 @@
 <?php
-// $_POST guarda tudo que foi enviado pelo formulário anterior
+
 $nome_turma = $_POST["nome_turma"];
 $qtd_alunos = intval($_POST["qtd_alunos"]);
 
@@ -30,7 +30,7 @@ if ($qtd_alunos < 2 || $qtd_alunos > 30) {
 
         <form action="resultado.php" method="post">
 
-            <!-- Campos ocultos para passar o nome da turma e a quantidade para a próxima página -->
+            
             <input type="hidden" name="nome_turma" value="<?php echo $nome_turma; ?>">
             <input type="hidden" name="qtd_alunos" value="<?php echo $qtd_alunos; ?>">
 
@@ -65,7 +65,7 @@ if ($qtd_alunos < 2 || $qtd_alunos > 30) {
                     </div>
                 </div>
 
-            <?php } // fim do for ?>
+            <?php }  ?>
 
             <button type="submit" class="botao">Calcular e Ver Relatório</button>
 
