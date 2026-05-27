@@ -45,7 +45,6 @@ if ($qtd_alunos < 2 || $qtd_alunos > 30) {
 
                     <div class="campo-grupo">
                         <label>Nome do Aluno:</label>
-                        <!-- O [] no name cria uma lista com todos os valores enviados -->
                         <input type="text" name="nome[]" required placeholder="Nome completo">
                     </div>
 

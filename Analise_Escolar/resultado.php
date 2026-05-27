@@ -1,5 +1,5 @@
 <?php
-// Pega os dados enviados pelo formulario do alunos.php
+
 $nome_turma = $_POST["nome_turma"];
 $qtd_alunos = $_POST["qtd_alunos"];
 $nomes      = $_POST["nome"];   
@@ -7,7 +7,7 @@ $notas1     = $_POST["nota1"];
 $notas2     = $_POST["nota2"];    
 $trabalhos  = $_POST["trabalho"]; 
 
-// Variaveis que vao acumular os dados da turma ao longo do loop
+
 $soma_medias  = 0;
 $soma_notas   = 0;
 $aprovados    = 0;
@@ -16,28 +16,22 @@ $reprovados   = 0;
 $maior_media  = 0;  
 $menor_media  = 10;
 
-// Array vazio que vai guardar os dados calculados de cada aluno
+
 $alunos = array();
 
-// O for comeca em 0 porque arrays em PHP comecam no indice 0
-// A cada volta do loop, $i representa um aluno diferente
 for ($i = 0; $i < $qtd_alunos; $i++) {
 
     $n1 = floatval($notas1[$i]);
     $n2 = floatval($notas2[$i]);
     $tr = floatval($trabalhos[$i]);
 
-    // Media aritmetica: soma das 3 notas dividida por 3
-    // round() arredonda para 2 casas decimais
     $media = round(($n1 + $n2 + $tr) / 3, 2);
 
-    // sqrt() e uma funcao nativa do PHP que calcula a raiz quadrada
     $raiz = round(sqrt($n1 + $n2 + $tr), 2);
 
-    // max() pega o maior valor, min() pega o menor, abs() garante resultado positivo
     $diferenca = round(abs(max($n1, $n2, $tr) - min($n1, $n2, $tr)), 2);
 
-    // Define a situacao e incrementa o contador correspondente
+  
     if ($media >= 7) {
         $situacao = "Aprovado";
         $aprovados++;
@@ -49,15 +43,14 @@ for ($i = 0; $i < $qtd_alunos; $i++) {
         $reprovados++;
     }
 
-    // Acumula a media e as notas para calcular as estatisticas da turma depois
+   
     $soma_medias = $soma_medias + $media;
     $soma_notas  = $soma_notas + $n1 + $n2 + $tr;
 
-    // Atualiza a maior e menor media encontrada ate agora
+   
     if ($media > $maior_media) $maior_media = $media;
     if ($media < $menor_media) $menor_media = $media;
 
-    // Salva todos os dados do aluno num array associativo (chave => valor)
     $alunos[$i] = array(
         "nome"      => $nomes[$i],
         "nota1"     => $n1,
@@ -123,7 +116,7 @@ $percentual  = round(($aprovados / $qtd_alunos) * 100, 1);
                         <td><?php echo $aluno["diferenca"]; ?></td>
                         <td><?php echo $aluno["situacao"]; ?></td>
                     </tr>
-                <?php } // fim do foreach ?>
+                <?php } ?>
             </tbody>
         </table>
 
@@ -137,7 +130,6 @@ $percentual  = round(($aprovados / $qtd_alunos) * 100, 1);
         <p>Reprovados: <strong><?php echo $reprovados; ?></strong></p>
         <p>Percentual de aprovacao: <strong><?php echo $percentual; ?>%</strong></p>
 
-        <!-- Mensagem automatica baseada no percentual de aprovacao -->
         <?php if ($percentual >= 80) { ?>
             <p>Desempenho geral: <strong>Otimo! A turma foi muito bem.</strong></p>
         <?php } elseif ($percentual >= 50) { ?>
