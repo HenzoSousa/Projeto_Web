@@ -3,7 +3,7 @@
 $nome_turma = $_POST["nome_turma"];
 $qtd_alunos = intval($_POST["qtd_alunos"]);
 
-// Garante que a quantidade está entre 2 e 30, se não volta ao início
+// Garante que a quantidade está entre 2 e 40, se não volta ao início
 if ($qtd_alunos < 2 || $qtd_alunos > 40) {
     header("Location: index.php");
     exit;
@@ -35,7 +35,7 @@ if ($qtd_alunos < 2 || $qtd_alunos > 40) {
             <input type="hidden" name="qtd_alunos" value="<?php echo $qtd_alunos; ?>">
 
             <?php
-            // O for cria os campos de cada aluno automaticamente
+
             // Começa em 1 e vai até a quantidade de alunos informada
             for ($i = 1; $i <= $qtd_alunos; $i++) {
             ?>

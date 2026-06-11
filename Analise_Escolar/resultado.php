@@ -7,7 +7,7 @@ $notas1     = $_POST["nota1"];
 $notas2     = $_POST["nota2"];    
 $trabalhos  = $_POST["trabalho"]; 
 
-
+//Variaveis Acumuladoras.
 $soma_medias  = 0;
 $soma_notas   = 0;
 $aprovados    = 0;
@@ -19,6 +19,7 @@ $menor_media  = 10;
 
 $alunos = array();
 
+// Começa no índice 0 (primeiro aluno) e repete até o último aluno informado
 for ($i = 0; $i < $qtd_alunos; $i++) {
 
     $n1 = floatval($notas1[$i]);
@@ -43,11 +44,11 @@ for ($i = 0; $i < $qtd_alunos; $i++) {
         $reprovados++;
     }
 
-   
+   // Soma todas as médias e notas dos alunos para gerar os resultados gerais da turma
     $soma_medias = $soma_medias + $media;
     $soma_notas  = $soma_notas + $n1 + $n2 + $tr;
 
-   
+  // Valida e atualiza as medias
     if ($media > $maior_media) $maior_media = $media;
     if ($media < $menor_media) $menor_media = $media;
 
@@ -62,8 +63,7 @@ for ($i = 0; $i < $qtd_alunos; $i++) {
         "situacao"  => $situacao
     );
 }
-
-// Calculados depois do loop porque dependem da soma completa de todos os alunos
+// Calcula a média geral da turma e o percentual de aprovação
 $media_geral = round($soma_medias / $qtd_alunos, 2);
 $percentual  = round(($aprovados / $qtd_alunos) * 100, 1);
 ?>
@@ -105,7 +105,9 @@ $percentual  = round(($aprovados / $qtd_alunos) * 100, 1);
                 // $i e o indice e $aluno sao os dados daquele aluno
                 foreach ($alunos as $i => $aluno) {
                 ?>
+                
                     <tr>
+                        
                         <td><?php echo $i + 1; ?></td>
                         <td><?php echo $aluno["nome"]; ?></td>
                         <td><?php echo $aluno["nota1"]; ?></td>
