@@ -1,0 +1,82 @@
+.form-box {
+    background: white;
+    padding: 2.8rem;
+    border-radius: 20px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+    max-width: 700px;
+    margin: 0 auto;
+    animation: fadeInUp 0.7s ease;
+}
+
+.form-box h2 {
+    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 4px solid var(--accent);
+    position: relative;
+}
+
+.form-group {
+    margin-bottom: 1.8rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.7rem;
+    font-weight: 600;
+    color: #2c2c2c;
+    font-size: 1.05rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    border: 2px solid #d4c9b8;
+    border-radius: 12px;
+    font-size: 1.02rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 5px rgba(224, 122, 95, 0.15);
+    transform: scale(1.02);
+}
+
+/* Botões com mais vida */
+.btn {
+    padding: 0.95rem 2rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-primary   { background: var(--accent); color: white; }
+.btn-success   { background: var(--secondary); color: white; }
+.btn-danger    { background: #c2410c; color: white; }
+.btn-secondary { background: #64748b; color: white; }
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+.btn:active {
+    transform: scale(0.96);
+}
+
+.form-actions {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 2.2rem;
+    flex-wrap: wrap;
+}
