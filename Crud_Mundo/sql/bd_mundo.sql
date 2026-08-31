@@ -48,6 +48,31 @@ CREATE TABLE IF NOT EXISTS governantes (
 ) ENGINE=InnoDB;
 
 
+CREATE TABLE IF NOT EXISTS usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    login VARCHAR(50) UNIQUE NOT NULL,
+    senha VARCHAR(255) NOT NULL,
+    primeiro_acesso TINYINT(1) DEFAULT 1,
+    tentativas_falhas INT DEFAULT 0,
+    bloqueado TINYINT(1) DEFAULT 0,
+    data_cadastro DATETIME DEFAULT CURRENT_TIMESTAMP,
+    ultimo_acesso DATETIME NULL
+) ENGINE=InnoDB;
+
+
+CREATE TABLE IF NOT EXISTS logs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario_id INT NULL,
+    acao VARCHAR(50) NOT NULL,
+    ip VARCHAR(45) NOT NULL,
+    data_hora DATETIME DEFAULT CURRENT_TIMESTAMP,
+    detalhes TEXT,
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE SET NULL
+) ENGINE=InnoDB;
+
+
+
 INSERT INTO continentes (nome, populacao, area, total_paises) VALUES 
 ('América do Sul', 430000000, 17840000.00, 1),
 ('Europa', 746000000, 10180000.00, 1)
@@ -62,3 +87,7 @@ INSERT INTO cidades (nome, pais_id, populacao, area, clima, data_fundacao) VALUE
 ('São José dos Campos', 1, 730000, 1099.00, 'Subtropical', '1767-07-27'),
 ('Paris', 2, 2160000, 105.00, 'Temperado', '0250-01-01')
 ON DUPLICATE KEY UPDATE id=id;
+
+INSERT INTO usuarios (nome, login, senha, primeiro_acesso) 
+VALUES ('Administrador', 'admin', '$2y$10$8pQ7z9vX5kL2mN7pQ9xY5eZ7vX8nM9pQ2wE4rT6yU8iO0pL2kM4n', 1)
+ON DUPLICATE KEY UPDATE login = login;
