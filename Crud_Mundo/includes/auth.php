@@ -41,19 +41,16 @@ function login($login, $senha) {
     }
 
     if (password_verify($senha, $usuario['senha'])) {
-        // Resetar tentativas
         $pdo->prepare("UPDATE usuarios SET tentativas_falhas = 0, ultimo_acesso = NOW() WHERE id = ?")
             ->execute([$usuario['id']]);
 
-        $_SESSION['usuario_id'] = $usuario['id'];
+        $_SESSION['usuario_id']   = $usuario['id'];
         $_SESSION['usuario_nome'] = $usuario['nome'];
         $_SESSION['primeiro_acesso'] = $usuario['primeiro_acesso'];
 
         registrarLog($usuario['id'], 'LOGIN', 'Login realizado com sucesso');
-
         return true;
     } else {
-        // Incrementa tentativas
         $tentativas = $usuario['tentativas_falhas'] + 1;
         $bloqueado = ($tentativas >= 3) ? 1 : 0;
 
@@ -72,7 +69,9 @@ function login($login, $senha) {
 }
 
 function logout() {
-    registrarLog($_SESSION['usuario_id'] ?? null, 'LOGOUT', 'Usuário deslogou do sistema');
+    if (isset($_SESSION['usuario_id'])) {
+        registrarLog($_SESSION['usuario_id'], 'LOGOUT', 'Usuário saiu do sistema');
+    }
     session_destroy();
     header("Location: /CRUD_Mundo/paginas/auth/login.php");
     exit;
