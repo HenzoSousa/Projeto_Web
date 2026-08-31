@@ -46,6 +46,30 @@ HTML5, CSS, JavaScript.
 
 🏫 Sistema De Análise de Estatistica Escolar
 
+Este projeto consiste no desenvolvimento de um Sistema de Análise de Estatística Escolar, criado com o objetivo de organizar, visualizar e analisar informações relacionadas ao desempenho dos alunos.
+
+O sistema permite reunir dados escolares e transformá-los em informações estatísticas, facilitando a análise de aspectos como desempenho acadêmico, médias, notas e outros indicadores relacionados à instituição de ensino.
+
+O projeto tem como objetivo auxiliar na organização e interpretação dos dados, proporcionando uma visualização mais clara das informações e contribuindo para uma análise mais eficiente do cenário escolar.
+
+🛠️ Tecnologias Utilizadas
+
+HTML5, CSS, JavaScript, PHP.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Sistema de CRUD MUNDO
+
+Este projeto consiste no desenvolvimento de um sistema CRUD, criado com o objetivo de praticar as principais operações realizadas em um banco de dados: Create (criar), Read (ler), Update (atualizar) e Delete (excluir).
+
+O sistema permite realizar o gerenciamento de informações relacionadas a países, cidades e idiomas, possibilitando a inserção, consulta, atualização e exclusão dos dados cadastrados.
+
+O projeto tem como objetivo colocar em prática conceitos de desenvolvimento web, integração entre sistema e banco de dados, além da manipulação e gerenciamento de informações por meio das operações fundamentais de um CRUD.
+
+🛠️ Tecnologias Utilizadas
+
+HTML5, CSS, JavaScript, PHP e MySQL.
+
 
 
 
