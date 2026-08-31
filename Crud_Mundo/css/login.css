@@ -1,0 +1,124 @@
+
+.login-page {
+    background: linear-gradient(135deg, #0f2c59 0%, #1e4d8c 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.login-page::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/old-map.png');
+    opacity: 0.07;
+    z-index: 1;
+}
+
+.login-container {
+    background: white;
+    width: 100%;
+    max-width: 440px;
+    margin: 20px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    animation: fadeInScale 0.7s ease;
+}
+
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.8); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+.login-header {
+    background: linear-gradient(to right, var(--primary), #1e4d8c);
+    color: white;
+    text-align: center;
+    padding: 2rem 1.5rem;
+}
+
+.login-header h2 {
+    margin: 0;
+    font-size: 2.1rem;
+    font-weight: 800;
+    text-shadow: 0 3px 6px rgba(0,0,0,0.4);
+}
+
+.login-header p {
+    margin: 10px 0 0 0;
+    opacity: 0.95;
+    font-size: 1.1rem;
+}
+
+.login-body {
+    padding: 2.3rem 2rem;
+}
+
+.login-body .alert {
+    margin-bottom: 1.5rem;
+}
+
+.login-body .form-group {
+    margin-bottom: 1.7rem;
+}
+
+.login-body label {
+    display: block;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+    color: #2c2c2c;
+}
+
+.login-body .form-control {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    border: 2px solid #d4c9b8;
+    border-radius: 12px;
+    font-size: 1.05rem;
+    transition: all 0.3s;
+}
+
+.login-body .form-control:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 5px rgba(224, 122, 95, 0.2);
+    outline: none;
+}
+
+.login-body button {
+    width: 100%;
+    padding: 1.15rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    margin-top: 10px;
+}
+
+.login-body button:hover {
+    background: #c15d45;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(224, 122, 95, 0.35);
+}
+
+.login-footer {
+    text-align: center;
+    padding: 1.4rem;
+    background: #f9f5f0;
+    color: #555;
+    font-size: 0.97rem;
+    border-top: 1px solid #e8d9c8;
+}
+
+.login-footer strong {
+    color: var(--primary);
+}
