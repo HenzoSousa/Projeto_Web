@@ -38,7 +38,7 @@ include_once __DIR__ . '/../../includes/header.php';
 
 <div class="login-container">
     <div class="login-header">
-        <h2>🔑 Primeiro Acesso</h2>
+        <h2>Primeiro Acesso</h2>
         <p>É obrigatório trocar sua senha</p>
     </div>
     
