@@ -76,3 +76,30 @@ function logout() {
     header("Location: /CRUD_Mundo/paginas/auth/login.php");
     exit;
 }
+
+function alterarSenha($usuario_id, $senha_atual, $nova_senha) {
+    global $pdo;
+
+    // Busca a senha atual do usuário
+    $stmt = $pdo->prepare("SELECT senha FROM usuarios WHERE id = ?");
+    $stmt->execute([$usuario_id]);
+    $usuario = $stmt->fetch();
+
+    if (!$usuario || !password_verify($senha_atual, $usuario['senha'])) {
+        registrarLog($usuario_id, 'TROCA_SENHA_FALHA', 'Senha atual incorreta');
+        return "Senha atual incorreta!";
+    }
+
+    if (strlen($nova_senha) < 6) {
+        return "A nova senha deve ter no mínimo 6 caracteres!";
+    }
+
+    $hash = password_hash($nova_senha, PASSWORD_DEFAULT);
+    
+    $stmt = $pdo->prepare("UPDATE usuarios SET senha = ?, primeiro_acesso = 0 WHERE id = ?");
+    $stmt->execute([$hash, $usuario_id]);
+
+    registrarLog($usuario_id, 'TROCA_SENHA', 'Senha alterada com sucesso pelo usuário');
+    
+    return true;
+}
